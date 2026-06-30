@@ -178,17 +178,17 @@ export default function blue() {
                 <div className={styles.testimonialCard}>
                   <div className={styles.testimonialContainer}>
                     <div className={styles.person}>
-                      <img src="https://i.imgur.com/K5mH5Jw.png" alt="Gustavo Gurita" />
+                      
                       <h4>Gustavo Gurita</h4>
                     </div>
 
                     <div className={styles.person}>
-                      <img src="https://i.imgur.com/dKQOxaA.png" alt="Joao Victor" />
+                      
                       <h4>Joao Victor</h4>
                     </div>
 
                     <div className={styles.person}>
-                      <img src="https://i.imgur.com/GnWxGyC.png" alt="Lucas Benicio" />
+                      
                       <h4>Lucas Benicio</h4>
                     </div>
                   </div>
@@ -197,17 +197,17 @@ export default function blue() {
                 <div className={styles.testimonialCard}>
                   <div className={styles.testimonialContainer}>
                     <div className={styles.person}>
-                      <img src="https://i.imgur.com/so12Xg1.png" alt="Rafael Melari" />
+                      
                       <h4>Rafael Melari</h4>
                     </div>
 
                     <div className={styles.person}>
-                      <img src="https://i.imgur.com/z3VqLBo.png" alt="Jerray Santos" />
+                      
                       <h4>Jerray Santos</h4>
                     </div>
 
                     <div className={styles.person}>
-                      <img src="https://i.imgur.com/G2YlARy.png" alt="Rodrigo Ramos" />
+                      
                       <h4>Rodrigão</h4>
                     </div>
                   </div>
