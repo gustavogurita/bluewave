@@ -1,0 +1,582 @@
+/* NAVBAR */
+.navbar {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:23px;
+}
+
+.navLogo h2 { color:white; }
+
+.navMenu {
+    display:flex;
+    gap:10px;
+}
+
+.navMenu.active{ display:flex; }
+
+.navLink {
+    padding:10px 18px;
+    color:white;
+    border-radius:30px;
+}
+
+.navLink:hover {
+    background:#6191c9;
+    color: black;
+}
+
+/* HAMBURGER */
+.hamburger {
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+}
+
+.hamburger span {
+    width:25px;
+    height:3px;
+    background:white;
+}
+
+/* HERO */
+.heroSection {
+    min-height:100vh;
+    background:#161b44;
+}
+
+.heroSection :global(.section-content) {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    min-height:100vh;
+    color:white;
+    flex-wrap:wrap;
+}
+
+.heroDetails { max-width:600px; }
+
+.heroTitle {
+    font-family:"Miniver";
+    color:#6191c9;
+    font-size:2.3rem;
+}
+
+.heroSubtitle {
+    font-size:2rem;
+    font-weight:600;
+}
+
+.heroDescription {
+    margin:20px 0;
+}
+
+.heroButtons {
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.button {
+    padding:10px 25px;
+    border-radius:30px;
+}
+
+.orderNow {
+    background:#6191c9;
+    color:#3b141c;
+    transition: transform 0.3s ease;
+}
+
+.orderNow:hover{
+    transform: scale(1.1)
+}
+
+.contactUs {
+    border:2px solid white;
+    color:white;
+    transition: transform 0.3s ease;
+}
+
+.contactUs:hover{
+    transform: scale(1.1)
+}
+
+.hero{
+    text-align: center;
+}
+
+.heroImageWrapper {
+    max-width:450px;
+}
+
+/* ABOUT */
+.aboutSection {
+    padding:120px 0;
+    background:#f5f5f5;
+}
+
+.aboutContainer {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
+    flex-wrap:wrap;
+}
+
+.aboutImage img {
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-left: 5.5em;
+}
+
+.aboutText {
+    max-width:500px;
+    text-align:center;
+}
+
+.aboutText h2 { font-size:28px; }
+
+.line {
+    width:60px;
+    height:3px;
+    background:#6191c9;
+    margin:10px 0 20px;
+}
+
+.line2 {
+    width:60px;
+    height:3px;
+    background:#6191c9;
+    margin:10px 0 20px;
+    margin-left: 13.6em;
+}
+
+.aboutText p {
+    color:#555;
+    margin-bottom:15px;
+}
+
+.social {
+    display:flex;
+    gap:20px;
+    justify-content: center;
+}
+
+.social a:hover{
+    color: #2c80e0;
+}
+
+/* GALERIA / DOAÇÃO */
+.gallerySection {}
+
+.galleryTitle {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.galleryLine {
+    width: 80px;
+    height: 4px;
+    background: #2c80e0;
+    margin: 0 auto 40px auto;
+    border-radius: 2px;
+}
+
+.galleryGrid {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 3em;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.donationValues {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.donationBtn {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #161b44;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.donationBtn:hover {
+    background: #29588d;
+    transform: scale(1.05);
+    color: black;
+}
+
+.donationCustom {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.donationCustom label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.donationCustom input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.donationForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.donationForm input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.donationPayment {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.donationPayment label {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.donationSubmit {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #161b44;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.donationSubmit:hover {
+    background: #29588d;
+    transform: scale(1.03);
+    color: black;
+}
+
+/* PROJETOS (cards) */
+.grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 30em;
+  height: 40em;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 22em;
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 15px;
+  text-align: center;
+  margin: 1em;
+}
+
+.cardContent h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.cardContent p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.cardLink{
+    background: #161b44;
+    padding: 0.8em;
+    border-radius: 2em;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.cardLink:hover {
+  color: black;
+}
+
+.tag {
+  display: inline-block;
+  background: #0077b6;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+    padding: 120px 0;
+    background: #f8f8f8;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.carouselTrack {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.testimonialCard {
+    min-width: 100%;
+    padding: 20px;
+}
+
+.testimonialContainer {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.person {
+    max-width: 200px;
+}
+
+.person img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.person h4 {
+    margin-bottom: 10px;
+}
+
+.carouselBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #2c80e0;
+    z-index: 10;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.dots {
+    margin-top: 20px;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background: #ccc;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.dot.active {
+    background: #2c80e0;
+}
+
+/* CONTATO */
+.contactSection {
+    padding: 120px 0;
+    background: #f5f5f5;
+}
+
+.contactTitle {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.contactLine {
+    width: 60px;
+    height: 3px;
+    background: #1cb6f3;
+    margin: 10px auto 50px;
+}
+
+.contactContainer {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.contactInfo {
+    flex: 1;
+    color: #333;
+}
+
+.contactInfo p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contactForm {
+    flex: 1;
+}
+
+.contactForm input,
+.contactForm textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+.contactForm textarea {
+    height: 120px;
+    resize: none;
+}
+
+.contactForm button {
+    background: #2c80e0;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+.footer {
+    background: #1f1f1f;
+    color: white;
+    padding: 20px;
+}
+
+.footerContent {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footerSocial {
+    display: flex;
+    gap: 15px;
+}
+
+.footerSocial a:hover {
+    color: #2c80e0;
+}
+
+@media(max-width:768px){
+    .heroSection .sectionContent{
+        flex-direction:column-reverse;
+        text-align:center;
+    }
+
+    .heroImageWrapper{
+        max-width:300px;
+        margin-top:20px;
+    }
+
+    .heroButtons{
+        justify-content:center;
+    }
+
+    .aboutContainer{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hamburger { display:flex; }
+
+    .navMenu{
+        display:none;
+        position:absolute;
+        right:20px;
+        top:70px;
+        background:#3b141c;
+        flex-direction:column;
+        width:200px;
+    }
+
+    .contactContainer {
+        flex-direction: column;
+    }
+
+    .footerContent {
+        text-align: center;
+        gap: 15px;
+    }
+
+    .galleryGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .menuContainer{
+        flex-direction: column;
+        align-items: center;
+    }
+}

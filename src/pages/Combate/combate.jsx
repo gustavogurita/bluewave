@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import styles from './combate.module.css';
 
 export default function combate() {
   const [menuAtivo, setMenuAtivo] = useState(false);
@@ -7,37 +8,36 @@ export default function combate() {
   return (
     <>
       <header>
-        <nav className="navbar section-content">
-          {/* Usando o Link do React Router para voltar à Home com segurança */}
-          <Link to="/" className="nav-logo">
+        <nav className={`navbar section-content ${styles.navbar}`}>
+          <Link to="/" className={styles.navLogo}>
             <h2>Blue Wave</h2>
           </Link>
 
-          <div className="hamburger" id="hamburger" onClick={() => setMenuAtivo(!menuAtivo)}>
+          <div className={styles.hamburger} id="hamburger" onClick={() => setMenuAtivo(!menuAtivo)}>
             <span></span>
             <span></span>
             <span></span>
           </div>
 
-          <ul className={`nav-menu ${menuAtivo ? 'active' : ''}`} id="nav-menu">
-            <li><Link to="/" className="nav-link">← Voltar</Link></li>
-            <li><a href="#inicio" className="nav-link">Início</a></li>
-            <li><a href="#dicas" className="nav-link">Dicas</a></li>
-            <li><a href="#acoes" className="nav-link">Ações</a></li>
-            <li><a href="#importancia" className="nav-link">Importância</a></li>
-            <li><a href="#final" className="nav-link">Conclusão</a></li>
+          <ul className={`${styles.navMenu} ${menuAtivo ? styles.active : ''}`} id="nav-menu">
+            <li><Link to="/" className={styles.navLink}>← Voltar</Link></li>
+            <li><a href="#inicio" className={styles.navLink}>Início</a></li>
+            <li><a href="#dicas" className={styles.navLink}>Dicas</a></li>
+            <li><a href="#acoes" className={styles.navLink}>Ações</a></li>
+            <li><a href="#importancia" className={styles.navLink}>Importância</a></li>
+            <li><a href="#final" className={styles.navLink}>Conclusão</a></li>
           </ul>
         </nav>
       </header>
 
       <main style={{ paddingTop: '80px' }}>
         {/* INTRODUÇÃO */}
-        <section className="about-section" id="inicio">
+        <section className={styles.aboutSection} id="inicio">
           <div className="section-content">
-            <div className="about-container">
-              <div className="about-text">
+            <div className={styles.aboutContainer}>
+              <div className={styles.aboutText}>
                 <h2>COMBATE AO PLÁSTICO</h2>
-                <div className="line" style={{ margin: '10px auto 30px' }}></div>
+                <div className={styles.line} style={{ margin: '10px auto 30px' }}></div>
 
                 <p>
                   O plástico representa uma das maiores ameaças aos oceanos.
@@ -54,7 +54,7 @@ export default function combate() {
                 </p>
               </div>
 
-              <div className="about-image">
+              <div className={styles.aboutImage}>
                 <img
                   src="https://autossustentavel.com/wp-content/uploads/2018/06/plasticos-426187984.jpg"
                   alt="Poluição por plástico"
@@ -73,14 +73,14 @@ export default function combate() {
         </section>
 
         {/* DICAS */}
-        <section className="about-section" id="dicas" style={{ background: 'white' }}>
+        <section className={styles.aboutSection} id="dicas" style={{ background: 'white' }}>
           <div className="section-content">
-            <div className="about-container">
-              <div className="about-image"></div>
+            <div className={styles.aboutContainer}>
+              <div className={styles.aboutImage}></div>
 
-              <div className="about-text">
+              <div className={styles.aboutText}>
                 <h2>DICAS PARA REDUZIR A POLUIÇÃO</h2>
-                <div className="line"></div>
+                <div className={styles.line}></div>
 
                 <p>✔ Utilize garrafas reutilizáveis.</p>
                 <p>✔ Evite copos e canudos descartáveis.</p>
@@ -96,14 +96,14 @@ export default function combate() {
 
         {/* AÇÕES */}
         <section className="section" id="acoes">
-          <h1 className="hero">Ações Sustentáveis</h1>
+          <h1 className={styles.hero}>Ações Sustentáveis</h1>
           <br /><br />
 
-          <div className="grid">
-            <div className="card">
+          <div className={styles.grid}>
+            <div className={styles.card}>
               <img src="https://static.todamateria.com.br/upload/co/le/coletaseletiva-cke.jpg" alt="Reciclagem" />
-              <div className="card-content">
-                <span className="tag">Reciclagem</span>
+              <div className={styles.cardContent}>
+                <span className={styles.tag}>Reciclagem</span>
                 <h3>Separe os Resíduos</h3>
                 <p>
                   Faça a separação correta de plástico, papel,
@@ -112,10 +112,10 @@ export default function combate() {
               </div>
             </div>
 
-            <div className="card">
+            <div className={styles.card}>
               <img src="https://ambiental.sc/wp-content/uploads/2023/12/reducao-do-consumo-de-plastico.jpg" alt="Reduzir plástico" />
-              <div className="card-content">
-                <span className="tag">Consumo Consciente</span>
+              <div className={styles.cardContent}>
+                <span className={styles.tag}>Consumo Consciente</span>
                 <h3>Reduza o Descartável</h3>
                 <p>
                   Prefira produtos reutilizáveis e diminua o
@@ -124,10 +124,10 @@ export default function combate() {
               </div>
             </div>
 
-            <div className="card">
+            <div className={styles.card}>
               <img src="https://caminharsaudavel.com.br/2023/wp-content/uploads/2022/02/Texto-02-Como-incentivar-as-criancas-a-pratica-da-reciclagem-Biologa.jpg" alt="Educação Ambiental" />
-              <div className="card-content">
-                <span className="tag">Conscientização</span>
+              <div className={styles.cardContent}>
+                <span className={styles.tag}>Conscientização</span>
                 <h3>Incentive Outras Pessoas</h3>
                 <p>
                   Compartilhe boas práticas e participe de
@@ -139,12 +139,12 @@ export default function combate() {
         </section>
 
         {/* IMPORTÂNCIA */}
-        <section className="about-section" id="importancia">
+        <section className={styles.aboutSection} id="importancia">
           <div className="section-content">
-            <div className="about-container">
-              <div className="about-text">
+            <div className={styles.aboutContainer}>
+              <div className={styles.aboutText}>
                 <h2>POR QUE COMBATER O PLÁSTICO?</h2>
-                <div className="line" style={{ margin: '10px auto 30px' }}></div>
+                <div className={styles.line} style={{ margin: '10px auto 30px' }}></div>
 
                 <p>
                   O plástico pode permanecer na natureza por
@@ -166,7 +166,7 @@ export default function combate() {
                 </p>
               </div>
 
-              <div className="about-image">
+              <div className={styles.aboutImage}>
                 <img
                   src="https://www.politize.com.br/wp-content/uploads/2024/09/O-ODS-14-protege-a-vida-marinha_.webp"
                   alt="Vida marinha"
@@ -185,10 +185,10 @@ export default function combate() {
         </section>
 
         {/* IMAGEM FINAL */}
-        <section className="gallery-section" id="final">
+        <section className={styles.gallerySection} id="final">
           <div className="section-content">
-            <h2 className="gallery-title">Juntos Fazemos a Diferença</h2>
-            <div className="gallery-line"></div>
+            <h2 className={styles.galleryTitle}>Juntos Fazemos a Diferença</h2>
+            <div className={styles.galleryLine}></div>
 
             <div style={{ textAlign: 'center' }}>
               <img
@@ -220,11 +220,11 @@ export default function combate() {
       </main>
 
       {/* FOOTER */}
-      <footer>
-        <div className="section-content footer-content">
+      <footer className={styles.footer}>
+        <div className={`section-content ${styles.footerContent}`}>
           <p>© 2026 Blue Wave</p>
 
-          <div className="footer-social">
+          <div className={styles.footerSocial}>
             <a href="#"><i className="fab fa-facebook-f"></i></a>
             <a href="#"><i className="fab fa-instagram"></i></a>
             <a href="#"><i className="fab fa-x-twitter"></i></a>
