@@ -23,7 +23,6 @@ export default function blue() {
             <li><a href="#sobre" className={styles.navLink}>Sobre</a></li>
             <li><a href="#galeria" className={styles.navLink}>Doações</a></li>
             <li><a href="#menu" className={styles.navLink}>Projetos</a></li>
-            <li><a href="#funcionarios" className={styles.navLink}>Funcionários</a></li>
             <li><a href="#contato" className={styles.navLink}>Contato</a></li>
           </ul>
         </nav>
@@ -161,65 +160,6 @@ export default function blue() {
                 <p>Iniciativas para reduzir plásticos descartáveis e incentivar alternativas sustentáveis.</p>
                 <Link className={styles.cardLink} to="/combate">Saiba mais</Link>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FUNCIONÁRIOS */}
-        <section className={styles.testimonials} id="funcionarios">
-          <div className="section-content">
-            <h2>FUNCIONÁRIOS</h2>
-            <div className={styles.line}></div>
-
-            <div className={styles.carousel}>
-              <button className={`${styles.carouselBtn} ${styles.prev}`} onClick={() => setSlideIndex((prev) => (prev === 0 ? 1 : 0))}>&#10094;</button>
-
-              <div className={styles.carouselTrack} style={{ transform: `translateX(-${slideIndex * 100}%)` }}>
-                <div className={styles.testimonialCard}>
-                  <div className={styles.testimonialContainer}>
-                    <div className={styles.person}>
-                      
-                      <h4>Gustavo Gurita</h4>
-                    </div>
-
-                    <div className={styles.person}>
-                      
-                      <h4>Joao Victor</h4>
-                    </div>
-
-                    <div className={styles.person}>
-                      
-                      <h4>Lucas Benicio</h4>
-                    </div>
-                  </div>
-                </div>
-
-                <div className={styles.testimonialCard}>
-                  <div className={styles.testimonialContainer}>
-                    <div className={styles.person}>
-                      
-                      <h4>Rafael Melari</h4>
-                    </div>
-
-                    <div className={styles.person}>
-                      
-                      <h4>Jerray Santos</h4>
-                    </div>
-
-                    <div className={styles.person}>
-                      
-                      <h4>Rodrigão</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <button className={`${styles.carouselBtn} ${styles.next}`} onClick={() => setSlideIndex((prev) => (prev === 0 ? 1 : 0))}>&#10095;</button>
-            </div>
-
-            <div className={styles.dots}>
-              <span className={`${styles.dot} ${slideIndex === 0 ? styles.active : ''}`} onClick={() => setSlideIndex(0)}></span>
-              <span className={`${styles.dot} ${slideIndex === 1 ? styles.active : ''}`} onClick={() => setSlideIndex(1)}></span>
             </div>
           </div>
         </section>

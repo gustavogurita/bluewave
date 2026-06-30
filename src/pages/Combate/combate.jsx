@@ -20,7 +20,7 @@ export default function combate() {
           </div>
 
           <ul className={`${styles.navMenu} ${menuAtivo ? styles.active : ''}`} id="nav-menu">
-            <li><Link to="/" className={styles.navLink}>← Voltar</Link></li>
+            <li><Link to="/blue" className={styles.navLink}>← Voltar</Link></li>
             <li><a href="#inicio" className={styles.navLink}>Início</a></li>
             <li><a href="#dicas" className={styles.navLink}>Dicas</a></li>
             <li><a href="#acoes" className={styles.navLink}>Ações</a></li>

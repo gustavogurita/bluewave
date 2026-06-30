@@ -39,7 +39,7 @@ export default function Multiroes() {
           </div>
 
           <ul className={`${styles.navMenu} ${menuAtivo ? styles.active : ''}`} id="nav-menu">
-            <li><Link to="/" className={styles.navLink}>← Voltar</Link></li>
+            <li><Link to="/blue" className={styles.navLink}>← Voltar</Link></li>
             <li><a href="#alertas" className={styles.navLink}>Alertas</a></li>
             <li><a href="#proximos" className={styles.navLink}>Próximos Mutirões</a></li>
             <li><a href="#inscricao" className={styles.navLink}>Inscrição</a></li>

@@ -1,16 +1,9 @@
-//import './App.css'
-import HomeFuncionario from './pages/HomeFuncionario/HomeFuncionario'
+// src/App.jsx
+import AppRoutes from './routes/AppRoutes';
 
-function App() {
-
-
+export default function App() {
   return (
-    <>
-      <div>
-        <HomeFuncionario/>
-      </div>
-    </>
-  ) 
-}  
-
-export default App
+    
+    <AppRoutes />
+  );
+}

@@ -16,7 +16,7 @@ export default function Recife() {
             <span></span><span></span><span></span>
           </div>
           <ul className={`${styles.navMenu} ${menuAtivo ? styles.active : ''}`} id="nav-menu">
-            <li><Link to="/" className={styles.navLink}>← Voltar</Link></li>
+            <li><Link to="/blue" className={styles.navLink}>← Voltar</Link></li>
             <li><a href="#monitoramento" className={styles.navLink}>Monitoramento</a></li>
             <li><a href="#impactos" className={styles.navLink}>Impactos</a></li>
             <li><a href="#catalogo" className={styles.navLink}>Catálogo</a></li>
