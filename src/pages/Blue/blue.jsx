@@ -24,6 +24,7 @@ export default function blue() {
             <li><a href="#galeria" className={styles.navLink}>Doações</a></li>
             <li><a href="#menu" className={styles.navLink}>Projetos</a></li>
             <li><a href="#contato" className={styles.navLink}>Contato</a></li>
+            <li><Link to="/admin" className={styles.navLink}>Admin</Link></li>
           </ul>
         </nav>
       </header>

@@ -3,9 +3,10 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Blue from '../pages/Blue/blue';
 import Combate from '../pages/Combate/combate';
 import Multiroes from '../pages/Multiroes/multiroes';
-import Recife from '../pages/Recife/recife'; 
+import Recife from '../pages/Recife/recife';
 import Login from '../pages/Login/login';
-
+import AdminMutiroes from '../pages/Adm/AdminMutiroes';
+ 
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -13,7 +14,7 @@ function ScrollToTop() {
   }, [pathname]);
   return null;
 }
-
+ 
 export default function AppRoutes() {
   return (
     <BrowserRouter>
@@ -24,7 +25,9 @@ export default function AppRoutes() {
         <Route path="/multiroes" element={<Multiroes />} />
         <Route path="/recife" element={<Recife />} />
         <Route path="/blue" element={<Blue />} />
+        <Route path="/admin" element={<AdminMutiroes />} />
       </Routes>
     </BrowserRouter>
   );
 }
+ 

@@ -22,7 +22,7 @@ export default function Login() {
 
   <div className={styles.heroImage}>
   <img
-    src="https://snct.fiocruz.br/wp-content/uploads/2025/10/Fig-4-oceanos-e-saude-1024x666.jpg"
+    src="https://media.istockphoto.com/id/466061973/pt/foto/recife-de-coral-no-fundo-do-mar-tropical.jpg?s=612x612&w=0&k=20&c=bpnnRYlcPoQ-6Jvj-kzwwMTwFXWYUFK9auKcq6nxu9k="
     alt="Oceanos"
   />
 </div>
