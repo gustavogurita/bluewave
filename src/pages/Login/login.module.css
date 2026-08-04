@@ -73,8 +73,10 @@
 /* Login */
 .loginContainer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
 }
 
 .loginBox {
@@ -123,4 +125,189 @@ margin-top: 30px;
 
 .loginButton:hover {
   background: #252d6e;
+}
+
+/* Lembrar-me / Esqueci minha senha */
+.optionsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
+.rememberMe {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #444;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.rememberMe input {
+  width: auto;
+  margin: 0;
+  cursor: pointer;
+}
+
+.forgotLink {
+  color: #161b44;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.forgotLink:hover {
+  text-decoration: underline;
+}
+
+/* Divisor "ou continue com" */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 18px 0 14px;
+  color: #999;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+.divider span {
+  padding: 0 10px;
+  white-space: nowrap;
+}
+
+/* Botões sociais */
+.socialButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.socialButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px;
+  background: white;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.socialButton:hover {
+  background: #f5f5f5;
+  border-color: #ccc;
+}
+
+.socialIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Cadastro */
+.signupText {
+  margin: 16px 0 0;
+  font-size: 12px;
+  color: #444;
+}
+
+.signupLink {
+  color: #161b44;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signupLink:hover {
+  text-decoration: underline;
+}
+
+/* Termos */
+.termsText {
+  max-width: 300px;
+  font-size: 11px;
+  color: #888;
+  margin: 0;
+}
+
+.termsText a {
+  color: #888;
+  text-decoration: underline;
+}
+
+.termsText a:hover {
+  color: #161b44;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .heroImage {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 768px) {
+  .contentArea {
+    padding: 20px 20px 40px;
+  }
+
+  .heroSection {
+    max-width: 100%;
+  }
+
+  .heroContent h2 {
+    font-size: 1.4rem;
+  }
+
+  .heroContent p {
+    font-size: 0.95rem;
+  }
+
+  .heroImage {
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .loginBox {
+    width: 100%;
+    max-width: 300px;
+    transform: scale(1);
+    margin-top: 10px;
+    padding: 30px 24px;
+  }
+
+  .loginContainer {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 380px) {
+  .loginBox {
+    padding: 24px 18px;
+  }
+
+  .socialButton {
+    font-size: 12px;
+  }
 }

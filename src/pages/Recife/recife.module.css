@@ -199,3 +199,69 @@
 
     .navMenu.active{ display:flex; }
 }
+
+/* RESPONSIVO (adicional) */
+.grid {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .aboutContainer {
+        flex-direction: column !important;
+    }
+
+    .aboutText,
+    .aboutImage {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 auto !important;
+    }
+
+    .aboutImage img {
+        width: 220px;
+        height: 220px;
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .grid {
+        padding: 20px 16px;
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        box-sizing: border-box;
+    }
+
+    .card img {
+        height: 200px;
+        width: 100%;
+    }
+
+    .cardContent {
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutImage img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .card img {
+        height: 160px;
+    }
+
+    .cardContent h3 {
+        font-size: 16px;
+    }
+
+    .cardContent p {
+        font-size: 13px;
+    }
+}

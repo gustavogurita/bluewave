@@ -146,7 +146,6 @@ export default function AdminMutiroes() {
 
           <ul className={`${styles.navMenu} ${menuAtivo ? styles.active : ''}`} id="nav-menu">
             <li><Link to="/blue" className={styles.navLink}>← Voltar</Link></li>
-            <li><a href="#lista" className={styles.navLink}>Mutirões</a></li>
           </ul>
         </nav>
       </header>

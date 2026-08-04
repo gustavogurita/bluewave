@@ -24,7 +24,7 @@ export default function Recife() {
         </nav>
       </header>
 
-      <main style={{ paddingTop: '80px' }}>
+      <main style={{ paddingTop: '80px', overflowX: 'hidden' }}>
         {/* SEÇÃO MONITORAMENTO E EXPLICAÇÃO */}
         <section className={styles.aboutSection} id="monitoramento">
           <div className="section-content">
@@ -36,7 +36,19 @@ export default function Recife() {
                 <p>Nossa abordagem foca na observação da temperatura da água, pH e taxas de crescimento, permitindo antecipar fenômenos de branqueamento provocados por anomalias climáticas. Com esses dados, conseguimos atuar de forma preventiva, protegendo áreas que ainda apresentam alta resiliência.</p>
               </div>
               <div className={styles.aboutImage}>
-                <img src="https://www.brasildefato.com.br/wp-content/uploads/2024/09/image_processing20230329-1314-cp3229.jpeg" alt="Cientista monitorando recifes" style={{ width: '480px', height: '320px', borderRadius: '18px', objectFit: 'cover', boxShadow: '0 8px 20px rgba(0,0,0,.15)' }} />
+                <img
+                  src="https://www.brasildefato.com.br/wp-content/uploads/2024/09/image_processing20230329-1314-cp3229.jpeg"
+                  alt="Cientista monitorando recifes"
+                  style={{
+                    width: '100%',
+                    maxWidth: '480px',
+                    height: 'auto',
+                    aspectRatio: '3 / 2',
+                    borderRadius: '18px',
+                    objectFit: 'cover',
+                    boxShadow: '0 8px 20px rgba(0,0,0,.15)'
+                  }}
+                />
               </div>
             </div>
           </div>
@@ -51,7 +63,7 @@ export default function Recife() {
               <div className={styles.aboutText} style={{ flex: 1 }}>
                 <h2>IMPACTOS DO PROJETO EM NÍVEL NACIONAL</h2>
                 <div className={styles.line} style={{
-                    margin: '10px 0 30px 200px',
+                    margin: '10px auto 30px',
                     width: '100px'
                     }}></div>
                 <p>Nosso projeto tem transformado a gestão costeira no Brasil através de dados sólidos e ações práticas:</p>
@@ -64,7 +76,7 @@ export default function Recife() {
               </div>
 
               {/* Imagem vertical à direita */}
-              <div className={styles.aboutImage} style={{ flex: '0 0 300px' }}>
+              <div className={styles.aboutImage} style={{ flex: '0 0 300px', maxWidth: '100%' }}>
                 <img
                   src="https://images.pexels.com/photos/35252461/pexels-photo-35252461/free-photo-of-silhueta-de-um-mergulhador-explorando-uma-caverna-subaquatica.jpeg?cs=tinysrgb&dpr=1&w=500"
                   alt="Impacto Ambiental"
