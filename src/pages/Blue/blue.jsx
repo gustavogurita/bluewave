@@ -174,7 +174,7 @@ export default function blue() {
             <div className={styles.contactContainer}>
               <div className={styles.contactInfo}>
                 <p><i className="fas fa-map-marker-alt"></i> Rua Exemplo, Barueri - SP</p>
-                <p><i className="fas fa-envelope"></i> contato@bluewave.com</p>
+                <p><i className="fas fa-envelope"></i> contato@bluewave.com.br</p>
                 <p><i className="fas fa-phone"></i> (11) 99999-9999</p>
                 <p><i className="fas fa-clock"></i> Seg - Sex: 09:00 - 18:00</p>
                 <p><i className="fas fa-clock"></i> Sábado: 10:00 - 15:00</p>
