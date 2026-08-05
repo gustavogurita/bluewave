@@ -98,7 +98,16 @@ export default function AdminMutiroes() {
   function validar() {
     const novosErros = {};
     if (!form.titulo.trim()) novosErros.titulo = 'Informe um título.';
-    if (!form.data) novosErros.data = 'Informe a data.';
+    if (!form.data) {
+      novosErros.data = 'Informe a data.';
+    } else {
+      const hoje = new Date();
+      hoje.setHours(0, 0, 0, 0);
+      const dataMutirao = new Date(`${form.data}T00:00:00`);
+      if (dataMutirao < hoje) {
+        novosErros.data = 'A data não pode ser anterior à data atual.';
+      }
+    }
     if (!form.horario) novosErros.horario = 'Informe o horário.';
     if (!form.localizacao.trim()) novosErros.localizacao = 'Informe a localização.';
     if (!form.vagas || Number(form.vagas) <= 0) novosErros.vagas = 'Informe um número de vagas válido.';
@@ -130,6 +139,38 @@ export default function AdminMutiroes() {
     setMutiroes((lista) => lista.filter((m) => m.id !== id));
   }
 
+  // UC007 - Cadastrar E-mail para Notificações
+  const [emailsNotificacao, setEmailsNotificacao] = useState([]);
+  const [novoEmailNotificacao, setNovoEmailNotificacao] = useState('');
+  const [erroEmailNotificacao, setErroEmailNotificacao] = useState('');
+  const [msgEmailNotificacao, setMsgEmailNotificacao] = useState('');
+
+  function cadastrarEmailNotificacao(e) {
+    e.preventDefault();
+    const email = novoEmailNotificacao.trim();
+    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (!emailValido) {
+      setErroEmailNotificacao('Informe um e-mail em um formato válido.');
+      setMsgEmailNotificacao('');
+      return;
+    }
+    if (emailsNotificacao.includes(email)) {
+      setErroEmailNotificacao('Este e-mail já está cadastrado na lista de notificações.');
+      setMsgEmailNotificacao('');
+      return;
+    }
+
+    setEmailsNotificacao((lista) => [...lista, email]);
+    setErroEmailNotificacao('');
+    setMsgEmailNotificacao('E-mail adicionado com sucesso à lista de notificações!');
+    setNovoEmailNotificacao('');
+  }
+
+  function removerEmailNotificacao(email) {
+    setEmailsNotificacao((lista) => lista.filter((e) => e !== email));
+  }
+
   return (
     <div className={styles.pageWrapper}>
       <header>
@@ -146,6 +187,8 @@ export default function AdminMutiroes() {
 
           <ul className={`${styles.navMenu} ${menuAtivo ? styles.active : ''}`} id="nav-menu">
             <li><Link to="/blue" className={styles.navLink}>← Voltar</Link></li>
+            <li><a href="#lista" className={styles.navLink}>Mutirões</a></li>
+            <li><a href="#notificacoes" className={styles.navLink}>Notificações</a></li>
           </ul>
         </nav>
       </header>
@@ -321,6 +364,72 @@ export default function AdminMutiroes() {
                 </div>
               </div>
             )}
+          </div>
+        </section>
+
+        <section className={styles.adminSection} id="notificacoes" style={{ paddingTop: 0 }}>
+          <div className="section-content">
+            <div className={styles.formWrap}>
+              <div className={styles.registrationCard}>
+                <h2 className={styles.sectionTitle}>Cadastrar E-mail para Notificações</h2>
+                <div className={styles.galleryLine}></div>
+                <p className={styles.pageSubtitle}>
+                  Gerencie os e-mails que recebem avisos automáticos sobre novos mutirões ou alterações.
+                </p>
+
+                <form onSubmit={cadastrarEmailNotificacao} className={styles.modernForm} style={{ marginTop: '20px' }}>
+                  <div className={styles.inputGroup}>
+                    <label>E-mail para notificações</label>
+                    <input
+                      type="email"
+                      className={erroEmailNotificacao ? styles.inputErro : ''}
+                      value={novoEmailNotificacao}
+                      onChange={(e) => {
+                        setNovoEmailNotificacao(e.target.value);
+                        if (erroEmailNotificacao) setErroEmailNotificacao('');
+                      }}
+                      placeholder="exemplo@email.com"
+                    />
+                    {erroEmailNotificacao && <span className={styles.campoErro}>{erroEmailNotificacao}</span>}
+                  </div>
+
+                  <div className={styles.formActions} style={{ justifyContent: 'flex-start' }}>
+                    <button type="submit" className={styles.btnSubmit}>
+                      <i className="fas fa-plus"></i> Adicionar E-mail
+                    </button>
+                  </div>
+                </form>
+
+                {msgEmailNotificacao && <p className={styles.formMessage}>{msgEmailNotificacao}</p>}
+
+                {emailsNotificacao.length > 0 && (
+                  <ul style={{ marginTop: '25px', textAlign: 'left' }}>
+                    {emailsNotificacao.map((email) => (
+                      <li
+                        key={email}
+                        style={{
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          alignItems: 'center',
+                          padding: '10px 0',
+                          borderBottom: '1px solid #eee',
+                        }}
+                      >
+                        <span><i className="fas fa-envelope" style={{ color: '#2c80e0', marginRight: '10px' }}></i>{email}</span>
+                        <button
+                          type="button"
+                          title="Remover"
+                          className={`${styles.iconBtn} ${styles.iconBtnDanger}`}
+                          onClick={() => removerEmailNotificacao(email)}
+                        >
+                          <i className="fas fa-trash" style={{ color: '#de350b' }}></i>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
           </div>
         </section>
       </main>

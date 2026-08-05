@@ -6,6 +6,67 @@ export default function blue() {
   const [menuAtivo, setMenuAtivo] = useState(false);
   const [slideIndex, setSlideIndex] = useState(0);
 
+  // Doação
+  const [valorSelecionado, setValorSelecionado] = useState(null);
+  const [valorPersonalizado, setValorPersonalizado] = useState('');
+  const [msgDoacao, setMsgDoacao] = useState('');
+
+  function escolherValorFixo(valor) {
+    setValorSelecionado(valor);
+    setValorPersonalizado('');
+    setMsgDoacao('');
+  }
+
+  function alterarValorPersonalizado(valor) {
+    setValorPersonalizado(valor);
+    setValorSelecionado(null);
+    setMsgDoacao('');
+  }
+
+  function confirmarDoacao(e) {
+    e.preventDefault();
+    const nome = e.target.elements['doador-nome'].value.trim();
+    const email = e.target.elements['doador-email'].value.trim();
+    const pagamento = e.target.elements['payment'].value;
+    const valor = valorSelecionado ?? Number(valorPersonalizado);
+
+    if (!valor || valor <= 0) {
+      setMsgDoacao('Escolha um valor fixo ou informe um valor personalizado maior que zero.');
+      return;
+    }
+    if (!nome || !email || !email.includes('@')) {
+      setMsgDoacao('Preencha nome e um e-mail válido para continuar.');
+      return;
+    }
+    if (!pagamento) {
+      setMsgDoacao('Selecione uma forma de pagamento.');
+      return;
+    }
+
+    setMsgDoacao(`Obrigado, ${nome}! Sua doação de R$ ${valor} via ${pagamento} foi registrada com sucesso.`);
+    e.target.reset();
+    setValorSelecionado(null);
+    setValorPersonalizado('');
+  }
+
+  // Contato
+  const [msgContato, setMsgContato] = useState('');
+
+  function enviarContato(e) {
+    e.preventDefault();
+    const nome = e.target.elements['nome'].value.trim();
+    const email = e.target.elements['email'].value.trim();
+    const mensagem = e.target.elements['mensagem'].value.trim();
+
+    if (!nome || !email || !email.includes('@') || !mensagem) {
+      setMsgContato('Preencha nome, e-mail e mensagem corretamente antes de enviar.');
+      return;
+    }
+
+    setMsgContato('Mensagem enviada com sucesso! Nossa equipe entrará em contato em breve.');
+    e.target.reset();
+  }
+
   return (
     <>
       <header>
@@ -90,40 +151,56 @@ export default function blue() {
             <h2 className={styles.galleryTitle}>DOE AQUI</h2>
             <div className={styles.galleryLine}></div>
 
-            <div className={styles.galleryGrid}>
+            <form className={styles.galleryGrid} onSubmit={confirmarDoacao}>
               <div className={styles.donationValues}>
-                <button className={styles.donationBtn}>R$ 10</button>
-                <button className={styles.donationBtn}>R$ 25</button>
-                <button className={styles.donationBtn}>R$ 50</button>
-                <button className={styles.donationBtn}>R$ 100</button>
+                {[10, 25, 50, 100].map((valor) => (
+                  <button
+                    type="button"
+                    key={valor}
+                    className={styles.donationBtn}
+                    style={valorSelecionado === valor ? { background: '#29588d', outline: '2px solid #6191c9' } : undefined}
+                    onClick={() => escolherValorFixo(valor)}
+                  >
+                    R$ {valor}
+                  </button>
+                ))}
               </div>
 
               <div className={styles.donationCustom}>
                 <label htmlFor="custom-value">Outro valor:</label>
-                <input type="number" id="custom-value" placeholder="Digite o valor" />
+                <input
+                  type="number"
+                  id="custom-value"
+                  min="1"
+                  placeholder="Digite o valor"
+                  value={valorPersonalizado}
+                  onChange={(e) => alterarValorPersonalizado(e.target.value)}
+                />
               </div>
 
               <div className={styles.donationForm}>
-                <input type="text" placeholder="Seu nome" />
-                <input type="email" placeholder="Seu email" />
+                <input type="text" name="doador-nome" placeholder="Seu nome" required />
+                <input type="email" name="doador-email" placeholder="Seu email" required />
               </div>
 
               <div className={styles.donationPayment}>
                 <label>
-                  <input type="radio" name="payment" /> Cartão de Crédito
+                  <input type="radio" name="payment" value="Cartão de Crédito" required /> Cartão de Crédito
                 </label>
                 <label>
-                  <input type="radio" name="payment" /> Pix
+                  <input type="radio" name="payment" value="Cartão de Débito" /> Cartão de Débito
                 </label>
                 <label>
-                  <input type="radio" name="payment" /> Boleto
+                  <input type="radio" name="payment" value="Pix" /> Pix
                 </label>
               </div>
 
               <div className={styles.donationAction}>
-                <button className={styles.donationSubmit}>DOAR AGORA</button>
+                <button type="submit" className={styles.donationSubmit}>DOAR AGORA</button>
               </div>
-            </div>
+
+              {msgDoacao && <p className={styles.formMessage}>{msgDoacao}</p>}
+            </form>
           </div>
         </section>
 
@@ -174,7 +251,7 @@ export default function blue() {
             <div className={styles.contactContainer}>
               <div className={styles.contactInfo}>
                 <p><i className="fas fa-map-marker-alt"></i> Rua Exemplo, Barueri - SP</p>
-                <p><i className="fas fa-envelope"></i> contato@bluewave.com.br</p>
+                <p><i className="fas fa-envelope"></i> contato@bluewave.com</p>
                 <p><i className="fas fa-phone"></i> (11) 99999-9999</p>
                 <p><i className="fas fa-clock"></i> Seg - Sex: 09:00 - 18:00</p>
                 <p><i className="fas fa-clock"></i> Sábado: 10:00 - 15:00</p>
@@ -182,12 +259,13 @@ export default function blue() {
               </div>
 
               <div className={styles.contactForm}>
-                <form action="mailto:contato@bluewave.com" method="post" encType="text/plain">
+                <form onSubmit={enviarContato}>
                   <input type="text" name="nome" placeholder="Seu nome" required />
                   <input type="email" name="email" placeholder="Seu email" required />
                   <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
                   <button type="submit">Enviar</button>
                 </form>
+                {msgContato && <p className={styles.formMessage}>{msgContato}</p>}
               </div>
             </div>
           </div>
