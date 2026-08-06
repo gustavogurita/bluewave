@@ -80,6 +80,9 @@
  
 /* ===== Conteúdo ===== */
  
+.contentArea {
+    gap: 80px; /* ou 100px, 150px... */
+}
 .contentArea{
     flex:1;
     display:flex;
@@ -105,40 +108,187 @@
     font-size:17px;
 }
  
-.heroImage{
-    width:520px;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,.2);
-}
- 
-.heroImage img{
-    width:100%;
-    display:block;
-    transition:.4s;
-}
- 
-.heroImage:hover img{
-    transform:scale(1.05);
-}
- 
 /* ===== Login ===== */
- 
-.loginContainer{
-    margin-top:35px;
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
 }
  
-.loginBox{
-    width:360px;
-    background:white;
-    border-radius:18px;
-    padding:35px;
-    box-shadow:0 15px 35px rgba(0,0,0,.15);
+.loginBox {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 700px;
+ 
+  transform: scale(1.2); /* 👈 ZOOM AQUI */
+  transform-origin: center;
+margin-top: 30px;
 }
- .loginBox h2{
-    text-align:center;
-    color:#18224c;
-    margin-bottom:25px;
+ 
+.inputGroup {
+  margin-bottom: 15px;
+}
+ 
+.inputGroup label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+ 
+.inputGroup input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+ 
+.loginButton {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  background: #161b44;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+ 
+.loginButton:hover {
+  background: #252d6e;
+}
+ 
+/* Lembrar-me / Esqueci minha senha */
+.optionsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+ 
+.rememberMe {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #444;
+  cursor: pointer;
+  font-weight: normal;
+}
+ 
+.rememberMe input {
+  width: auto;
+  margin: 0;
+  cursor: pointer;
+}
+ 
+.forgotLink {
+  color: #161b44;
+  text-decoration: none;
+  font-weight: 600;
+}
+ 
+.forgotLink:hover {
+  text-decoration: underline;
+}
+ 
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 18px 0 14px;
+  color: #999;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+ 
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+ 
+.divider span {
+  padding: 0 10px;
+  white-space: nowrap;
+}
+ 
+/* Botões sociais */
+.socialButtons {
+  display: flex;
+  justify-content: center; /* centraliza os botões */
+  gap: 10px;
+  margin-top: 15px;
+}
+
+ 
+.socialButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 10px;
+  font-size: 11px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: white;
+  width: 180px; /* largura fixa menor */
+}
+.socialButton:hover {
+  background: #161b44;
+  border-color: #ffffff;
+}
+ 
+.socialIcon {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+}
+ 
+/* Cadastro */
+.signupText {
+  margin: 10px 0 5px; /* diminui o espaço */
+  font-size: 12px;
+  color: #444;
+  text-align: center;
+}
+
+.signupLink {
+  color: #161b44;
+  font-weight: 600;
+  text-decoration: none;
+}
+ 
+.signupLink:hover {
+  text-decoration: underline;
+}
+ 
+/* Termos */
+.termsText {
+  max-width: 300px;
+  font-size: 11px;
+  color: #888;
+  margin: 0 auto; /* mantém centralizado */
+  text-align: center;
+}
+ 
+.termsText a {
+  color: #888;
+  text-decoration: underline;
+}
+ 
+.termsText a:hover {
+  color: #161b44;
 }
  
 /* Inputs */

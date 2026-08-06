@@ -49,13 +49,20 @@ export default function Login() {
   }
  
   return (
-    <div
-      className={`${styles.loginPage}
-      ${darkMode ? styles.dark : ""}
-      ${highContrast ? styles.highContrast : ""}`}
-    >
+<div
+  className={`${styles.loginPage}
+  ${darkMode ? styles.dark : ""}
+  ${highContrast ? styles.highContrast : ""}`}
+  style={{
+    backgroundImage: "url('https://s2.best-wallpaper.net/wallpaper/3840x2160/1805/Underwater-fish-coral-shark-sea_3840x2160.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat"
+  }}
+>
+
       <nav className={styles.navbar}>
-        <h1>🌊 Blue Wave</h1>
+        <h1> Blue Wave</h1>
       </nav>
  
       <button
@@ -71,7 +78,7 @@ export default function Login() {
       {menuAcessibilidade && (
         <div className={styles.accessibilityMenu}>
           <button onClick={() => setFontSize(fontSize + 2)}>
-            A+
+            🔎︎+
           </button>
  
           <button
@@ -79,11 +86,11 @@ export default function Login() {
               setFontSize(Math.max(12, fontSize - 2))
             }
           >
-            A-
+            🔎︎-
           </button>
  
           <button onClick={() => setDarkMode(!darkMode)}>
-            🌙
+            ☼
           </button>
  
           <button
@@ -91,11 +98,11 @@ export default function Login() {
               setHighContrast(!highContrast)
             }
           >
-            🖤
+            ⏾
           </button>
  
           <button onClick={lerPagina}>
-            🔊 Ler
+            🔊
           </button>
         </div>
       )}
@@ -110,14 +117,10 @@ export default function Login() {
               preservação da vida marinha.
             </p>
           </div>
- 
-          <div className={styles.heroImage}>
-            <img
-              src="https://img.freepik.com/premium-photo/coral-reef-background-underwater-marine-life-ecosystem-ocean-sea_548821-36454.jpg"
-              alt="Recife de coral colorido no fundo do mar."
-            />
-          </div>
         </div>
+        
+
+        
  
         <div className={styles.loginContainer}>
           <div className={styles.loginBox}>
@@ -170,9 +173,8 @@ export default function Login() {
                 <input type="checkbox" />
                  Lembrar de mim
               </label>
-              </div>
-
-              <div>
+             
+              
               <Link
                 to="/blue"
                 className={styles.forgotLink}
