@@ -1,50 +1,148 @@
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:23px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 23px;
 }
 
-.navLogo h2 { color:white; }
+.navLogo h2 {
+    color: white;
+}
 
 .navMenu {
-    display:flex;
-    gap:10px;
+    display: flex;
+    gap: 10px;
 }
 
-.navMenu.active{ display:flex; }
+.navMenu.active {
+    display: flex;
+}
 
 .navLink {
-    padding:10px 18px;
-    color:white;
-    border-radius:30px;
+    padding: 10px 18px;
+    color: white;
+    border-radius: 30px;
 }
 
 .navLink:hover {
-    background:#6191c9;
+    background: #6191c9;
     color: black;
 }
 
-/* HAMBURGER */
+
+/* =========================
+   HAMBURGER
+========================= */
+
 .hamburger {
-    display:none;
-    flex-direction:column;
-    gap:5px;
-    cursor:pointer;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
 }
 
 .hamburger span {
-    width:25px;
-    height:3px;
-    background:white;
+    width: 25px;
+    height: 3px;
+    background: white;
 }
 
-/* HERO INTERNO */
-.internalHero {
-    background: linear-gradient(135deg, #161b44 0%, #29588d 100%);
-    padding: 160px 0 80px;
+
+/* =========================
+   ACESSIBILIDADE
+========================= */
+
+.accessibilityButton {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    width: 58px;
+    height: 58px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #18224c;
     color: white;
+
+    cursor: pointer;
+    font-size: 28px;
+
+    z-index: 99999;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .3);
+
+    transition: .3s;
+}
+
+.accessibilityButton:hover {
+    transform: scale(1.1);
+}
+
+
+.accessibilityMenu {
+    position: fixed;
+
+    right: 20px;
+    bottom: 90px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    background: white;
+
+    padding: 12px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+
+    z-index: 99999;
+}
+
+
+.accessibilityMenu button {
+    border: none;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    background: #18224c;
+    color: white;
+
+    font-weight: bold;
+}
+
+.accessibilityMenu button:hover {
+    background: #29397c;
+}
+
+
+/* =========================
+   HERO INTERNO
+========================= */
+
+.internalHero {
+    background: linear-gradient(
+        135deg,
+        #161b44 0%,
+        #29588d 100%
+    );
+
+    padding: 160px 0 80px;
+
+    color: white;
+
     text-align: center;
 }
 
@@ -60,7 +158,11 @@
     margin: 0 auto;
 }
 
-/* NEWSLETTER */
+
+/* =========================
+   NEWSLETTER
+========================= */
+
 .newsletterSection {
     padding: 60px 0;
     background: #f8f8f8;
@@ -135,7 +237,11 @@
     min-height: 20px;
 }
 
-/* EVENTOS */
+
+/* =========================
+   EVENTOS
+========================= */
+
 .eventsSection {
     padding: 80px 0;
     background: white;
@@ -158,7 +264,10 @@
 
 .eventsGridLayout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(300px, 1fr)
+    );
     gap: 30px;
     margin-top: 40px;
 }
@@ -223,7 +332,8 @@
     letter-spacing: 1px;
 }
 
-.textAlert .day, .textAlert .month {
+.textAlert .day,
+.textAlert .month {
     color: #de350b !important;
 }
 
@@ -251,7 +361,11 @@
     width: 16px;
 }
 
-/* INSCRIÇÃO */
+
+/* =========================
+   INSCRIÇÃO
+========================= */
+
 .registrationSection {
     padding: 80px 0;
     background: #f5f5f5;
@@ -321,7 +435,11 @@
     color: black;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
+
 .footer {
     background: #1f1f1f;
     color: white;
@@ -344,8 +462,140 @@
     color: #2c80e0;
 }
 
-/* MEDIA QUERIES */
+
+/* =========================
+   MODO ESCURO
+========================= */
+
+.dark {
+    background: #111827;
+    color: white;
+    min-height: 100vh;
+}
+
+.dark .newsletterSection {
+    background: #111827 !important;
+}
+
+.dark .newsletterCard {
+    background: #1f2937 !important;
+}
+
+.dark .newsletterCard h3,
+.dark .newsletterCard p {
+    color: white !important;
+}
+
+.dark .eventsSection {
+    background: #111827 !important;
+}
+
+.dark .sectionTitle {
+    color: white !important;
+}
+
+.dark .eventModernCard {
+    background: #1f2937 !important;
+    border-color: #374151;
+}
+
+.dark .eventHeaderDate {
+    background: #374151 !important;
+}
+
+.dark .eventHeaderDate .day {
+    color: white;
+}
+
+.dark .eventBodyInfo h3,
+.dark .eventBodyInfo p {
+    color: white !important;
+}
+
+.dark .registrationSection {
+    background: #111827 !important;
+}
+
+.dark .registrationCard {
+    background: #1f2937 !important;
+}
+
+.dark .inputGroup label {
+    color: white !important;
+}
+
+.dark .inputGroup input,
+.dark .inputGroup select {
+    background: #374151;
+    color: white;
+    border-color: #6b7280;
+}
+
+
+/* =========================
+   ALTO CONTRASTE
+========================= */
+
+.highContrast {
+    background: #000 !important;
+    color: white !important;
+    min-height: 100vh;
+}
+
+.highContrast .newsletterSection,
+.highContrast .eventsSection,
+.highContrast .registrationSection {
+    background: #000 !important;
+}
+
+.highContrast .newsletterCard,
+.highContrast .eventModernCard,
+.highContrast .registrationCard {
+    background: #000 !important;
+    color: white !important;
+    border: 2px solid white;
+}
+
+.highContrast h1,
+.highContrast h2,
+.highContrast h3,
+.highContrast p,
+.highContrast label {
+    color: white !important;
+}
+
+.highContrast .eventHeaderDate {
+    background: #000 !important;
+    border-color: white;
+}
+
+.highContrast .eventHeaderDate .day,
+.highContrast .eventHeaderDate .month {
+    color: white !important;
+}
+
+.highContrast input,
+.highContrast select {
+    background: #000 !important;
+    color: white !important;
+    border: 2px solid white;
+}
+
+.highContrast button {
+    border: 2px solid white;
+}
+
+.highContrast img {
+    filter: contrast(120%);
+}
+
+
+/* =========================
+   MEDIA QUERIES
+========================= */
+
 @media(max-width: 768px) {
+
     .footerContent {
         text-align: center;
         gap: 15px;
@@ -368,9 +618,21 @@
     .navMenu.active {
         display: flex;
     }
+
+    .accessibilityButton {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .accessibilityMenu {
+        right: 15px;
+        bottom: 85px;
+    }
 }
 
-@media (max-width: 600px) {
+
+@media(max-width: 600px) {
+
     .newsletterFormInline {
         flex-direction: column;
     }
@@ -379,7 +641,8 @@
         padding: 12px;
     }
 
-    .newsletterCard, .registrationCard {
+    .newsletterCard,
+    .registrationCard {
         padding: 25px 20px;
     }
 
