@@ -164,6 +164,19 @@ export default function blue() {
                 Admin
               </Link>
             </li>
+
+            <li>
+              <a href="/login" className={styles.navLink}>
+                 👤 Login
+              </a>
+            </li>
+
+            <li>
+              <a href="/cadastro" className={styles.navLink}>
+                 👤 Cadastre-se
+              </a>
+            </li>
+
           </ul>
         </nav>
       </header>

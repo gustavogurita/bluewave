@@ -1,622 +1,439 @@
-/* ===== Página ===== */
+/* ===== PÁGINA (ocupa exatamente a tela, sem scroll) ===== */
 
-.loginPage{
-    min-height:100vh;
+.page {
+    height:100vh;
+    height:100dvh;
     display:flex;
     flex-direction:column;
+    overflow:hidden;
+    background:#161b44;
+    color:white;
     transition:.3s;
 }
 
 
-.dark{
+/* ===== NAVBAR (mesmo estilo da página inicial) ===== */
+
+.navbar {
+    height:80px;
+    flex-shrink:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 40px;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.navLogo {
     color:white;
+    text-decoration:none;
+}
+
+.navLogo h2 {
+    margin:0;
+}
+
+.navLink {
+    padding:10px 18px;
+    color:white;
+    border-radius:30px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.navLink:hover {
+    background:#6191c9;
+    color:black;
 }
 
 
-.highContrast{
-    background:#000;
-    color:white;
-}
+/* ===== ACESSIBILIDADE ===== */
 
-
-/* ===== Navbar ===== */
-
-.navbar{
-    background:#18224c;
-    color:white;
-    text-align:center;
-    padding:20px;
-    font-size:22px;
-    font-weight:bold;
-    box-shadow:0 3px 10px rgba(0,0,0,.2);
-}
-
-
-/* ===== Acessibilidade ===== */
-
-.accessibilityButton{
-
+.accessibilityButton {
     position:fixed;
     right:20px;
     bottom:20px;
-
     width:58px;
     height:58px;
-
     border:none;
     border-radius:50%;
-
     background:#18224c;
     color:white;
-
     cursor:pointer;
     font-size:28px;
-
     z-index:99999;
-
     box-shadow:0 8px 20px rgba(0,0,0,.3);
-
     transition:.3s;
 }
 
-
-.accessibilityButton:hover{
-
+.accessibilityButton:hover {
     transform:scale(1.1);
-
 }
 
-
-
-.accessibilityMenu{
-
+.accessibilityMenu {
     position:fixed;
-
     right:20px;
     bottom:90px;
-
     display:flex;
     flex-direction:column;
-
     gap:10px;
-
     background:white;
-
     padding:12px;
-
     border-radius:15px;
-
     box-shadow:0 10px 30px rgba(0,0,0,.2);
-
     z-index:99999;
-
 }
 
-
-
-.accessibilityMenu button{
-
+.accessibilityMenu button {
     border:none;
-
     padding:10px;
-
     border-radius:8px;
-
     cursor:pointer;
-
     background:#18224c;
-
     color:white;
-
     font-weight:bold;
-
 }
 
-
-.accessibilityMenu button:hover{
-
+.accessibilityMenu button:hover {
     background:#29397c;
-
 }
 
 
+/* ===== CONTEÚDO ===== */
 
-/* ===== Conteúdo ===== */
-
-
-.contentArea{
-
+.content {
     flex:1;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:80px;
-
-    padding:40px 20px;
-
-}
-
-
-
-.heroSection{
-
-    text-align:center;
-
-}
-
-
-
-.heroContent h2{
-
-    font-size:38px;
-
-    color:#18224c;
-
-}
-
-
-
-.heroContent p{
-
-    color:#555;
-
-    margin-top:10px;
-
-    font-size:17px;
-
-}
-
-
-
-
-/* ===== Login ===== */
-
-
-.loginContainer{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    margin-bottom:40px;
-
-}
-
-
-
-.loginBox{
-
-    background:white;
-
-    padding:40px;
-
-    border-radius:10px;
-
-    box-shadow:0 4px 10px rgba(0,0,0,.1);
-
-    width:700px;
-
-    transform:scale(1.2);
-
-    margin-top:30px;
-
-}
-
-
-
-/* ===== Inputs ===== */
-
-
-.inputGroup{
-
-    display:flex;
-
-    flex-direction:column;
-
-    margin-bottom:18px;
-
-}
-
-
-
-.inputGroup label{
-
-    font-weight:bold;
-
-    margin-bottom:6px;
-
-    color:#333;
-
-}
-
-
-
-.inputGroup input{
-
-    padding:13px;
-
-    border:1px solid #ccc;
-
-    border-radius:10px;
-
-    outline:none;
-
-    font-size:16px;
-
-    transition:.3s;
-
-}
-
-
-
-.inputGroup input:focus{
-
-    border-color:#18224c;
-
-    box-shadow:0 0 8px rgba(24,34,76,.3);
-
-}
-
-
-
-/* ===== Botão Login ===== */
-
-
-.loginButton{
-
+    min-height:0;
     width:100%;
-
-    padding:14px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:#18224c;
-
-    color:white;
-
-    font-size:17px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-
-
-.loginButton:hover{
-
-    background:#29397c;
-
-    transform:translateY(-2px);
-
-}
-
-
-
-/* ===== Opções ===== */
-
-
-.optionsRow{
-
+    max-width:1200px;
+    margin:0 auto;
+    padding:20px 40px;
     display:flex;
-
+    align-items:center;
     justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:15px;
-
-    font-size:12px;
-
+    gap:60px;
+    overflow-y:auto; /* só aparece em telas muito pequenas */
 }
 
-
-
-.rememberMe{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:6px;
-
-    color:#444;
-
+.heroDetails {
+    max-width:520px;
 }
 
+.heroTitle {
+    font-family:"Miniver", serif;
+    color:#6191c9;
+    font-size:2.3rem;
+    margin:0;
+}
 
-
-.forgotLink{
-
-    color:#161b44;
-
-    text-decoration:none;
-
+.heroSubtitle {
+    font-size:2rem;
     font-weight:600;
+    margin:8px 0 0;
+}
 
+.heroDescription {
+    margin-top:20px;
+    line-height:1.6;
 }
 
 
-.forgotLink:hover{
+/* ===== CAIXA DE LOGIN ===== */
 
-    text-decoration:underline;
-
+.box {
+    width:420px;
+    max-width:100%;
+    flex-shrink:0;
+    background:#fff;
+    color:#333;
+    padding:32px;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
+.box h2 {
+    margin:0 0 20px;
+    text-align:center;
+    color:#18224c;
+}
 
-
-/* ===== Separador ===== */
-
-
-.divider{
-
+.field {
     display:flex;
-
-    align-items:center;
-
-    margin:18px 0 14px;
-
-    color:#999;
-
-    font-size:11px;
-
+    flex-direction:column;
+    margin-bottom:14px;
 }
 
+.field label {
+    font-weight:bold;
+    margin-bottom:6px;
+}
 
+.field input {
+    padding:11px 13px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    outline:none;
+    font-size:1rem;
+    transition:.3s;
+}
+
+.field input:focus {
+    border-color:#18224c;
+    box-shadow:0 0 8px rgba(24,34,76,.3);
+}
+
+.error {
+    margin:0 0 12px;
+    padding:8px 12px;
+    border-radius:8px;
+    background:#fdecea;
+    color:#b3261e;
+    font-size:.9rem;
+}
+
+.optionsRow {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:14px;
+    font-size:.8rem;
+}
+
+.rememberMe {
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.link {
+    color:#161b44;
+    font-weight:600;
+    text-decoration:none;
+}
+
+.link:hover {
+    text-decoration:underline;
+}
+
+.submit {
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#161b44;
+    color:#fff;
+    font-size:1.05rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.submit:hover {
+    background:#29588d;
+    transform:scale(1.03);
+    color:black;
+}
+
+.divider {
+    display:flex;
+    align-items:center;
+    margin:14px 0 12px;
+    color:#999;
+    font-size:.75rem;
+}
 
 .divider::before,
-.divider::after{
-
+.divider::after {
     content:"";
-
     flex:1;
-
     border-bottom:1px solid #ddd;
-
 }
 
-
-
-.divider span{
-
+.divider span {
     padding:0 10px;
-
 }
 
-
-
-/* ===== Redes sociais ===== */
-
-
-.socialButtons{
-
+.socialButtons {
     display:flex;
-
-    justify-content:center;
-
     gap:10px;
-
+    margin-bottom:14px;
 }
 
-
-
-.socialButton{
-
+.socialButton {
+    flex:1;
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
-    gap:6px;
-
-    width:180px;
-
-    padding:8px;
-
-    font-size:11px;
-
+    gap:8px;
+    padding:9px;
+    font-size:.85rem;
     border:1px solid #ddd;
-
-    border-radius:5px;
-
+    border-radius:8px;
     background:white;
-
+    color:#333;
     cursor:pointer;
-
+    transition:.3s;
 }
 
-
-
-.socialButton:hover{
-
+.socialButton:hover {
     background:#161b44;
-
     color:white;
-
 }
 
-
-
-/* ===== Cadastro ===== */
-
-
-.signupText{
-
+.smallText {
+    margin:0 0 8px;
     text-align:center;
-
-    font-size:12px;
-
-    color:#444;
-
+    font-size:.85rem;
 }
 
-
-
-.signupLink{
-
-    color:#161b44;
-
-    font-weight:bold;
-
-    text-decoration:none;
-
-}
-
-
-
-.signupLink:hover{
-
-    text-decoration:underline;
-
-}
-
-
-
-/* ===== Termos ===== */
-
-
-.termsText{
-
-    max-width:300px;
-
-    margin:auto;
-
+.terms {
+    margin:0;
     text-align:center;
-
-    font-size:11px;
-
+    font-size:.75rem;
     color:#888;
-
 }
 
-
-
-.termsText a{
-
+.terms a {
     color:#888;
-
     text-decoration:underline;
-
 }
 
 
+/* ===== MODO ESCURO ===== */
 
-/* ===== Dark Mode ===== */
+.dark {
+    background:#111827;
+}
 
-
-.dark .loginBox{
-
+.dark .box {
     background:#1f2937;
-
     color:white;
-
 }
 
-
-
-.dark .inputGroup label{
-
+.dark .box h2 {
     color:white;
-
 }
 
-
-
-.dark .inputGroup input{
-
+.dark .field input {
     background:#374151;
-
     color:white;
-
+    border-color:#6b7280;
 }
 
+.dark .error {
+    background:#3b1d1d;
+    color:#ffb4ab;
+}
 
+.dark .link {
+    color:#9db4ff;
+}
 
-.dark .heroContent h2{
-
+.dark .socialButton {
+    background:#374151;
     color:white;
+    border-color:#6b7280;
+}
 
+.dark .socialButton:hover {
+    background:#6191c9;
+    color:black;
 }
 
 
+/* ===== ALTO CONTRASTE ===== */
 
-.dark .heroContent p{
-
-    color:#ddd;
-
-}
-
-
-
-/* ===== Alto contraste ===== */
-
-
-.highContrast .loginBox{
-
+.highContrast {
     background:#000;
-
-    border:2px solid white;
-
 }
 
-
-
-.highContrast input{
-
+.highContrast .box {
     background:#000;
-
     color:white;
-
     border:2px solid white;
+}
 
+.highContrast .box h2,
+.highContrast .terms,
+.highContrast .terms a {
+    color:white;
+}
+
+.highContrast .field input {
+    background:#000;
+    color:white;
+    border:2px solid white;
+}
+
+.highContrast .link {
+    color:#ffff00;
+}
+
+.highContrast .submit,
+.highContrast .socialButton {
+    border:2px solid white;
+}
+
+.highContrast .socialButton {
+    background:#000;
+    color:white;
+}
+
+.highContrast .error {
+    background:#000;
+    color:#ffff00;
+    border:2px solid #ffff00;
 }
 
 
+/* ===== RESPONSIVO ===== */
 
-.highContrast button{
+@media(max-height:760px) {
 
-    border:2px solid white;
-
-}
-
-
-/* ===== Responsivo ===== */
-
-
-@media(max-width:700px){
-
-
-    .heroContent h2{
-
-        font-size:30px;
-
+    .box {
+        padding:22px;
     }
 
-
-
-    .loginBox{
-
-        width:90%;
-
-        padding:25px;
-
-        transform:none;
-
+    .box h2 {
+        margin-bottom:12px;
     }
 
+    .field {
+        margin-bottom:10px;
+    }
+
+}
+
+@media(max-width:900px) {
+
+    .navbar {
+        padding:0 20px;
+    }
+
+    .content {
+        justify-content:center;
+        padding:16px;
+    }
+
+    .heroDetails {
+        display:none;
+    }
+
+}
+
+@media(max-width:480px) {
+
+    .box {
+        padding:20px;
+    }
+
+    .accessibilityButton {
+        right:15px;
+        bottom:15px;
+    }
+
+    .accessibilityMenu {
+        right:15px;
+        bottom:85px;
+    }
 
 }
