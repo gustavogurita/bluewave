@@ -173,6 +173,7 @@ export default function Cadastro() {
             <span>
               Li e concordo com os <Link to="/termos">Termos de Uso</Link> e a{" "}
               <Link to="/privacidade">Política de Privacidade</Link>.
+              
             </span>
           </label>
 

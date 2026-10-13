@@ -6,7 +6,10 @@ import Multiroes from '../pages/Multiroes/multiroes';
 import Recife from '../pages/Recife/recife';
 import Login from '../pages/Login/login';
 import AdminMutiroes from '../pages/Adm/AdminMutiroes';
-import Cadastro from '../pages/Cadastro/cadastro'
+import Cadastro from '../pages/Cadastro/cadastro';
+import Perfil from '../pages/Perfil/perfil';
+
+
  
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -29,6 +32,7 @@ export default function AppRoutes() {
         <Route path="/admin" element={<AdminMutiroes />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/perfil" element={<Perfil />} /> 
       </Routes>
     </BrowserRouter>
   );

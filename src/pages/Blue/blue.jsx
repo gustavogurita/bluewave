@@ -177,6 +177,12 @@ export default function blue() {
               </a>
             </li>
 
+             <li>
+              <a href="/perfil" className={styles.navLink}>
+                 👤 Ver Perfil
+              </a>
+            </li>
+
           </ul>
         </nav>
       </header>
