@@ -3,12 +3,12 @@ import { Link } from 'react-router';
 import styles from './perfil.module.css';
 
 const perfilInicial = {
-  nome: 'Marina Oliveira',
-  email: 'marina@email.com',
-  telefone: '(11) 99999-9999',
+  nome: 'John Pogg',
+  email: 'joaovitorsantoscosta@email.com',
+  telefone: '(11) 9402-8922',
   cidade: 'Santos',
   estado: 'SP',
-  bio: 'Voluntária apaixonada pela preservação dos oceanos e pela educação ambiental.',
+  bio: 'Voluntário apaixonado pela preservação dos oceanos e pela educação ambiental.',
 };
 
 export default function Perfil() {
@@ -112,23 +112,11 @@ export default function Perfil() {
               </Link>
             </li>
 
-            <li>
-              <a href="#perfil" className={styles.navLink}>
-                Meu Perfil
-              </a>
-            </li>
+          
 
-            <li>
-              <a href="#participacoes" className={styles.navLink}>
-                Participações
-              </a>
-            </li>
+            
 
-            <li>
-              <a href="#configuracoes" className={styles.navLink}>
-                Configurações
-              </a>
-            </li>
+            
           </ul>
         </nav>
       </header>

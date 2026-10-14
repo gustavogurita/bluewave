@@ -167,19 +167,19 @@ export default function blue() {
 
             <li>
               <a href="/login" className={styles.navLink}>
-                 👤 Login
+                  Login
               </a>
             </li>
 
             <li>
               <a href="/cadastro" className={styles.navLink}>
-                 👤 Cadastre-se
+                  Cadastre-se
               </a>
             </li>
 
              <li>
               <a href="/perfil" className={styles.navLink}>
-                 👤 Ver Perfil
+                  Ver seu Perfil
               </a>
             </li>
 
