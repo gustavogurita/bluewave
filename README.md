@@ -4,7 +4,7 @@ Plataforma de **voluntariado e conservação da vida marinha**: usuários se cad
 se inscrevem em mutirões de limpeza costeira, doam e recebem informações sobre
 a vida marinha — administradores gerenciam tudo por um painel.
 
-#  Estrutura do projeto
+# 📁 Estrutura do projeto
 
 ```
 TCC/
@@ -20,7 +20,7 @@ TCC/
                                       Login, Cadastro, Perfil, Adm/AdminMutiroes
 ```
 
-##  Tecnologias
+## 🛠 Tecnologias
 
 | Camada | Tecnologias |
 |---|---|
@@ -50,7 +50,7 @@ npm run dev
 ```
 Abra http://localhost:5173
 
-##  Usuários de teste (senha: `12345678`)
+## 👥 Usuários de teste (senha: `12345678`)
 
 | E-mail | Nível |
 |---|---|
