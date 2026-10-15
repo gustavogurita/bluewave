@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 /**
  * Converte exceções da API em respostas JSON padronizadas:
@@ -32,5 +33,16 @@ public class ApiExceptionHandler {
         Map<String, String> corpo = new HashMap<>();
         corpo.put("erro", mensagem);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(corpo);
+    }
+
+    /**
+     * URL inexistente (ex.: digitar /api/mutiroe sem o "s") →
+     * responde JSON amigável em vez da página padrão com stack trace.
+     */
+    @ExceptionHandler(NoResourceFoundException.class)
+    public ResponseEntity<Map<String, String>> tratarRotaInexistente(NoResourceFoundException e) {
+        Map<String, String> corpo = new HashMap<>();
+        corpo.put("erro", "Rota não encontrada. Verifique o endereço. Exemplo correto: /api/mutiroes");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(corpo);
     }
 }
