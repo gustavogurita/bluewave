@@ -80,6 +80,7 @@ cd API\bluewave
 
 # 4. Front-end (em outro terminal)
 cd bluewave
+cd bluewave             ( de novo pois o front-end está dentro da subpasta `bluewave`, tendo que dar mais um cd extra)
 npm install
 npm run dev
 ```
