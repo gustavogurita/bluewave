@@ -83,6 +83,21 @@ cd bluewave
 cd bluewave             ( de novo pois o front-end está dentro da subpasta `bluewave`, tendo que dar mais um cd extra)
 npm install
 npm run dev
+
+Observações Importantes !
+
+- Se em caso de dar erros no cd saiba que as pastas estão com nomes repetidos igual o caso relatado a cima, 
+
+cd : Não é possível localizar o caminho 'Z:\Teste legal\API' porque ele não existe.
+No linha:1 caractere:1
++ cd API
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Z:\Teste legal\API:String) [Set-Location], ItemNo  
+   tFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand   
+
+A resolução foi dar 2 "cd bluewave" para entrar na pasta desejada
+
 ```
 
 ### ⚠️ Ajustando a senha do seu SQL Server (IMPORTANTE)
