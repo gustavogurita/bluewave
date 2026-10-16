@@ -98,6 +98,9 @@ No linha:1 caractere:1
 
 A resolução foi dar 2 "cd bluewave" para entrar na pasta desejada
 
+- Outro ponto é na questão da API, se caso não achar o diretório para fazer a API rodar,
+O diretório correto para acha-lá é "\bluewave\API\bluewave>"
+
 ```
 
 ### ⚠️ Ajustando a senha do seu SQL Server (IMPORTANTE)
