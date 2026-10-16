@@ -50,6 +50,86 @@ npm run dev
 ```
 Abra http://localhost:5173
 
+## 💻 Rodando em outra máquina (clone do repositório)
+
+Se você clonar o projeto em outro computador (outro PC, laboratório, notebook da
+apresentação), siga nesta ordem:
+
+### Pré-requisitos
+| Ferramenta | Versão | Para quê |
+|---|---|---|
+| SQL Server | 2019+ (Express serve) | banco `bd_bluewave` |
+| Java (JDK) | **21** | rodar a API |
+| Node.js | 18+ | rodar o front-end |
+| Git | qualquer | clonar o repositório |
+| Internet | — | Maven e npm baixam dependências na 1ª execução |
+
+### Passo a passo
+```powershell
+# 1. Clonar
+git clone https://github.com/gustavogurita/bluewave.git
+cd bluewave
+
+# 2. Banco (só na primeira vez) — abra o SSMS e execute o arquivo:
+#    bd_bluewave.sql  (na raiz do projeto)
+#    Ele cria o banco bd_bluewave + dados de teste.
+
+# 3. API — atenção à senha do banco (próximo tópico!)
+cd API\bluewave
+.\mvnw.cmd spring-boot:run
+
+# 4. Front-end (em outro terminal)
+cd bluewave
+npm install
+npm run dev
+```
+
+### ⚠️ Ajustando a senha do seu SQL Server (IMPORTANTE)
+
+O `application.properties` vem com um usuário/senha padrão. **Se o SQL Server da
+máquina tiver outra senha, a API não sobe** e aparecerá o erro:
+
+> *"Não foi possível conectar à API. Ela está rodando em localhost:8080?"*
+
+Nesse caso, **não altere o arquivo** — basta definir as variáveis de ambiente
+`DB_USER` e `DB_PASSWORD` antes de rodar a API (o `application.properties` já
+suporta isso):
+
+```powershell
+# PowerShell — vale só para esta janela/terminal
+$env:DB_USER = "sa"
+$env:DB_PASSWORD = "A_SENHA_DO_SEU_SQL_SERVER"
+.\mvnw.cmd spring-boot:run
+```
+
+Ou permanentemente (Windows → "Variáveis de ambiente do sistema"):
+
+| Variável | Exemplo |
+|---|---|
+| `DB_USER` | `sa` |
+| `DB_PASSWORD` | a senha do `sa` daquela máquina |
+
+> **Dica:** se o `sa` estiver desabilitado, habilite-o no SSMS
+> (Segurança → Logins → `sa` → Propriedades → desmarcar "Login desabilitado")
+> e use a senha que você escolheu na instalação do SQL Server.
+
+### ✅ Checklist antes de apresentar
+
+```powershell
+# API no ar? (deve responder JSON com os mutirões)
+curl http://localhost:8080/api/mutiroes
+
+# Teste completo ponta a ponta (12 verificações)
+cd bluewave
+node scripts\teste-integracao.mjs
+
+# Front no ar? (deve abrir a página azul)
+http://localhost:5173
+```
+
+Se os 3 itens acima responderem bem, está tudo conectado:
+**front → API → banco**.
+
 ## 👥 Usuários de teste (senha: `12345678`)
 
 | E-mail | Nível |
