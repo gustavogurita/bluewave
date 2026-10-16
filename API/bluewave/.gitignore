@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Logs locais / arquivos acidentais ###
+*.log
+# gerados quando alguém roda npm fora da pasta do front-end
+package-lock.json
+package.json
